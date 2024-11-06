@@ -18,8 +18,12 @@ import CartItem from "./components/CartItem.vue";
 export default {
   components: {
     CartItem,
+  },  
+  computed: {
+    cartProducts() {
+      return this.$store.getters.cartProducts;
+    },
   },
-  inject: ["cartProducts"],
 };
 </script>
 

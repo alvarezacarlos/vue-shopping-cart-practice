@@ -1,8 +1,8 @@
 <template>
-  <header>    
+  <header>
     <h1><router-link to="/">Shop</router-link></h1>
     <nav>
-      <ul>      
+      <ul>
         <li>
           <router-link to="/cart"
             >Cart<badge mode="elegant">{{
@@ -22,11 +22,26 @@
 
 <script>
 import Badge from "@/ui/Badge/Badge.vue";
-export default {
-  props: ["isLogged"],
-  inject: ["cartProducts", "login", "logout"],
+
+export default {  
   components: {
     Badge,
+  },
+  computed: {
+    isLogged() {
+      return this.$store.getters.userIsLogged;
+    },
+    cartProducts() {
+      return this.$store.getters.cartProducts;
+    },
+  },
+  methods: {
+    login() {
+      this.$store.dispatch("login");
+    },
+    logout() {
+      this.$store.dispatch("logout");
+    },
   },
 };
 </script>
@@ -43,7 +58,7 @@ header {
   align-items: center;
 }
 
-header h1{
+header h1 {
   font-size: 1.2rem;
 }
 

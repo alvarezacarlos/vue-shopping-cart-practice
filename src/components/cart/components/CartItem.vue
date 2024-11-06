@@ -27,10 +27,10 @@ export default {
       return this.price * this.quantity;
     },
   },
-  inject: ["removeFromCart"],
+  // inject: ["removeFromCart"],
   methods: {
     removeFromCartHandler() {
-      this.removeFromCart(this.productId);
+      this.$store.dispatch("removeFromCart", this.productId)      
     },
   },
 };

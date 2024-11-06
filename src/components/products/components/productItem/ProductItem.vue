@@ -25,10 +25,10 @@ export default {
     Badge,
   },
   props: ["id", "title", "price", "description", "image"],
-  inject: ["addToCart"],
+  // inject: ["addToCart"],
   methods: {
-    addToCardHandler() {
-      this.addToCart({
+    addToCardHandler() {     
+      this.$store.dispatch("addToCart", {
         id: this.id,
         title: this.title,
         price: this.price,

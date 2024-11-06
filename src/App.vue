@@ -1,5 +1,5 @@
 <template>
-  <navbar :is-logged="isLoggedIn" />
+  <navbar/>
   <router-view></router-view>
 </template>
 
@@ -7,6 +7,7 @@
 import Navbar from "./components/navbar/Navbar.vue";
 
 export default {
+  /*
   data() {
     return {
       products: [
@@ -40,22 +41,22 @@ export default {
       cartProducts: { products: [], total: 0, quantity: 0 },
       isLoggedIn: false,
     };
-  },
-  provide() {
-    return {
-      products: this.products,
-      cartProducts: this.cartProducts,
-      addToCart: this.addToCart,
-      removeFromCart: this.removeFromCart,
-      login: this.login,
-      logout: this.logout,
-      isLoggedIn: this.isLoggedIn
-    };
-  },
+  },*/
+  // provide() {
+  //   return {
+  //     products: this.products,
+  //     cartProducts: this.cartProducts,
+  //     addToCart: this.addToCart,
+  //     removeFromCart: this.removeFromCart,
+  //     login: this.login,
+  //     logout: this.logout,
+  //     isLoggedIn: this.isLoggedIn
+  //   };
+  // },
   components: {
     Navbar,
   },
-  methods: {
+ /* methods: {
     addToCart(product) {
       const productInCartIndex = this.cartProducts.products.findIndex(
         (cartProduct) => cartProduct.productId === product.id
@@ -93,5 +94,6 @@ export default {
       this.isLoggedIn = false;
     },
   },
+  */
 };
 </script>

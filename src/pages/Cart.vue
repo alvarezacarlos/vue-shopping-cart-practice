@@ -13,14 +13,13 @@ import CartList from "@/components/cart/CartList.vue";
 import Badge from "@/ui/Badge/Badge.vue";
 
 export default {
-  inject: ["cartProducts"],
   components: {
     CartList,
     Badge,
   },
   computed: {
     totalPrice() {
-      return this.cartProducts.total.toFixed(2);
+      return this.$store.getters.cartProducts.total.toFixed(2);
     },
   },
 };

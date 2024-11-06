@@ -13,13 +13,17 @@
 </template>
 
 <script>
-import ProductItem from './components/productItem/ProductItem.vue';
+import ProductItem from "./components/productItem/ProductItem.vue";
 
 export default {
   components: {
     ProductItem,
   },
-  inject: ["products"], 
+  computed: {
+    products() {
+      return this.$store.getters.products;
+    },
+  },
 };
 </script>
 
