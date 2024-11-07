@@ -29,7 +29,4 @@ export default {
             state.cartProducts.total -= productInCart.price * productInCart.quantity;
         }
     },
-    setLogged(state, payload) {
-        state.userIsLogged = payload.isLogged
-    }
 }
